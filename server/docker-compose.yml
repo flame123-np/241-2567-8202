@@ -1,0 +1,38 @@
+version: '3.7'
+services:
+  db:
+    image: mysql:5.7
+    container_name: mysql_db_840
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: webdb
+    ports:
+      - "3306:3306" # Ensure the port is correctly mapped
+    volumes:
+      - mysql_data_840:/var/lib/mysql
+    networks:
+      - weblab840
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin_840
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: root
+    ports:
+      - "8841:80"
+    depends_on:
+      - db
+    networks:
+      - weblab840
+    restart: always
+networks:
+  weblab840:
+    driver: bridge
+volumes:
+  mysql_data_840:
+    driver: local
