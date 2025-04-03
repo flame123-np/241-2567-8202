@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบลงเวลา</title>
+    <link rel="stylesheet" href="attendance.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">หน้าหลัก</a></li>
+                <li><a href="attendance.html">ลงเวลางาน</a></li>
+                <li><a href="leave.html">คำร้องขอลางาน</a></li>
+                <li><a href="history.html">ประวัติการทำงานและการลา</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="header-form">
+            <h1>ระบบลงเวลาทำงาน</h1>
+            <div class="flex form-input">
+                <div class="label">รหัสพนักงาน:</div>
+                <input class="form" name="employee_id" type="employee-id" placeholder="กรอกรหัสพนักงาน">
+            </div>
+            <div class="flex form-input">
+                <div class="label">วันที่:</div>
+                <input class="form" name="date" type="date" placeholder="กรอกวันที่">
+            </div>
+            <div class="flex form-input">
+                <div class="label">เวลาเข้างาน:</div>
+                <input class="form" name="time_in" type="time" placeholder="กรอกเวลาเข้างาน">
+            </div>
+            <div class="flex form-input">
+                <div class="label">เวลาออกงาน:</div>
+                <input class="form" name="time_out" type="time" placeholder="กรอกเวลาออกงาน">
+            </div>
+    
+            <div id= message class="message"></div>
+    
+            <div class="center">
+                <button id="submitBtn" class="button">ส่งข้อมูล</button>
+            </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>ระบบการจัดการลงเวลาและการลา</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="attendance.js"></script>
+</body>
+</html>

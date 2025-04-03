@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบการลา</title>
+    <link rel="stylesheet" href="leave.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">หน้าหลัก</a></li>
+                <li><a href="attendance.html">ลงเวลางาน</a></li>
+                <li><a href="leave.html">คําร้องขอลางาน</a></li>
+                <li><a href="history.html">ประวัติการทำงานและการลา</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="header-form">
+                <h1>เเบบคําร้องลางาน</h1>
+                <div class="flex form-input">
+                    <div class="header-form">รหัสพนักงาน:</div>
+                    <input class="form" name="employee_id" type="text" placeholder="กรอกรหัสพนักงาน">
+                </div>
+                <div class="flex form-input">
+                    <div class="header-form">ประเภทการลา:</div>
+                    <select class="form" name="leave_type">
+                        <option value="ลาป่วย">ลาป่วย</option>
+                        <option value="ลากิจ">ลากิจ</option>
+                        <option value="ลาพักร้อน">ลาพักร้อน</option>
+                        <option value="other">อื่น ๆ</option>
+                    </select>
+                </div>
+                <div class="flex form-input">
+                    <div class="header-form">เหตุผลการลา:</div>
+                    <textarea name="reason" placeholder="กรอกเหตุผลการลา"></textarea>
+                </div>
+                <div class="flex form-input">
+                    <div class="header-form">วันที่เริ่มลา:</div>
+                    <input class="form" name="start_date" type="date" placeholder="กรอกวันที่เริ่มลา">
+                </div>
+                <div class="flex form-input">
+                    <div class="header-form">วันที่สิ้นสุดลา:</div>
+                    <input class="form" name="end_date" type="date" placeholder="กรอกวันที่สิ้นสุดลา">
+                </div>
+                <div id= "message" class="message"></div>
+                <div class="center">
+                    <button type="button" id="submitBtn">บันทึกการลา</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p> ระบบการจัดการลงเวลาและการลา</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="leave.js"></script>
+</body>
+</html>
